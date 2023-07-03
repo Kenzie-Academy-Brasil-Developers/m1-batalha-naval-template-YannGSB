@@ -15,19 +15,19 @@ const seaBoard = [
 
 function allocateShips(shipPositions, initialBoard) {
   for (let i = 0; i < shipPositions.length; i++) {
-    const linha = shipPositions[i][0];
-    const coluna = shipPositions[i][1];
-    initialBoard[linha][coluna] = "S";
+    const row = shipPositions[i][0];
+    const column = shipPositions[i][1];
+    initialBoard[row][column] = "S";
   }
   return initialBoard;
 }
 
 function checkGuesses(guesses, mountedBoard) {
   for (let j = 0; j < guesses.length; j++) {
-    const linha = guesses[j][0];
-    const coluna = guesses[j][1];
-    if (mountedBoard[linha][coluna] === "S") {
-      mountedBoard[linha][coluna] = "X";
+    const row = guesses[j][0];
+    const column = guesses[j][1];
+    if (mountedBoard[row][coluna] === "S") {
+      mountedBoard[row][column] = "X";
     }
   }
   return mountedBoard;
@@ -35,10 +35,11 @@ function checkGuesses(guesses, mountedBoard) {
 
 function checkWinCondition(guessedBoard) {
   for (let k = 0; k < guessedBoard.length; k++) {
-    for (let l = 0; l < guessedBoard[k].length; l++)
+    for (let l = 0; l < guessedBoard[k].length; l++) {
       if (guessedBoard[k][l] === "S") {
         return false;
       }
     }
-    return true;
+  }
+  return true;
 }
