@@ -26,7 +26,7 @@ function checkGuesses(guesses, mountedBoard) {
   for (let j = 0; j < guesses.length; j++) {
     const row = guesses[j][0];
     const column = guesses[j][1];
-    if (mountedBoard[row][coluna] === "S") {
+    if (mountedBoard[row][column] === "S") {
       mountedBoard[row][column] = "X";
     }
   }
